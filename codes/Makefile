@@ -29,16 +29,6 @@ targeted_test_df.csv random_test_df.csv: sir_plot.Rout ;
 
 ######################################################################
 
-## Cribbing
-
-$(Sources):
-	$(CP) ../../SIRtest/codes/$@ .
-
-%.R: 
-	$(CP) ../../SIRtest/codes/$@ .
-
-######################################################################
-
 ### Makestuff
 
 Sources += Makefile
