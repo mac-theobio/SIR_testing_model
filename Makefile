@@ -34,6 +34,7 @@ manuscript_BMB.pdf: manuscript_BMB.tex
 springer += spbasic.bst svjour3.cls svglov3.clo
 springer_raw = https://raw.githubusercontent.com/latextemplates/svjour/master/
 
+Ignore += $(springer)
 $(springer):
 	wget -O $@ "$(springer_raw)/$@"
 
