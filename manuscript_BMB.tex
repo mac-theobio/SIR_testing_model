@@ -711,12 +711,10 @@ which is a positive quantity. Thus, $\pder \Rnum{w\_{IS}}\leq 0$. Therefore, inc
 % %%%%%%%
 \subsection{On Testing Rate and Numerical Singularity} \label{app:singularity}
 
-In this work, we do not present any numerical solutions of the ODEs to investigate typical trajectories.
-However, attempting to do so quickly reveals a problem in the way the model is posed;
-with the scaling of testing ($\sigma$) defined as in the body of the paper (Eq.~\eqref{sigma}), the population in the $S$ compartments appeared to blow up when the system is near the DFE. This occurs because once the only untested people are susceptibles, the FOI approaches $\Lambda=0$, and the testing rate $\testing{S} \to \rho N/S\_u$. Thus, the first equation of the model \eqref{model} will become
-$d S\_u/dt = - \rho N + \omega S\_n$. Thus changes in $S\_u$ will be independent on $S\_u$, and the decay of the $S\_u$
-population becomes linear rather than exponential --- allowing $S\_u$ to become negative!
+As mentioned in the main text, the simple implementation of testing rate in our model can cause model trajectories to become unstable near the DFE. This occurs because once the only untested people are susceptibles, the FOI approaches $\Lambda=0$, and the testing rate $\testing{S} \to \rho N/S\_u$. Thus, the first equation of the model \eqref{model} will become
+$d S\_u/dt = - \rho N + \omega S\_n$. Thus changes in $S\_u$ will be independent of $S\_u$, and the decay of the $S\_u$
+population becomes linear rather than exponential --- allowing $S\_u$ to become negative.
 To avoid this problem the testing rate, $\sigma$, should be formulated such that people from the untested compartments will not be tested if they are not there.
-One way to fix this issue, is to consider a maximum testing rate, $\tau$ (1/day). In general, we want to test at a rate of $\rho$ across the whole population. This won't always be possible, so we impose a maximum rate of $\tau$ per testable person and redefine $\sigma = \frac{\tau \rho N}{\tau W + \rho N}$, with the assumption that $\tau \gg \rho$. This modification of $\sigma$ does not affect any of the results we have derived about the invasion of the epidemic from the DFE (i.e., results on $\Rnum$ and $\Delta$).
+One way to fix this issue is to implement a maximum testing rate, $\tau$ (1/day). In general, we want to test at a rate of $\rho$ across the whole population. This won't always be possible, so we impose a maximum rate of $\tau$ per testable person and redefine $\sigma = \frac{\tau \rho N}{\tau W + \rho N}$, with the assumption that $\tau \gg \rho$. This modification of $\sigma$ does not affect any of the results we have derived about the invasion of the epidemic from the DFE (i.e., results on $\Rnum$ and $\Delta$).
 
 \end{document}
