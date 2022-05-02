@@ -10,6 +10,9 @@ vim_session:
 
 ######################################################################
 
+install_packages.Rout: install_packages.R
+	$(wrapR)
+
 autopipeR = defined
 Sources += $(wildcard *.R)
 
