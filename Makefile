@@ -42,6 +42,12 @@ manuscript_BMB.pdf: $(springer)
 
 ######################################################################
 
+## Automatically install missing R packages
+
+## codes/install_packages.Rout:
+
+######################################################################
+
 ## compartmental flowchart in ipe
 ## sudo apt-get install ipe
 Sources += pix/sir_comp.ipe
